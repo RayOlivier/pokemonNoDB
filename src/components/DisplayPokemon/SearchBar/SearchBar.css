@@ -1,0 +1,9 @@
+.search-header {
+  border: darkgoldenrod 2px solid;
+  width: 100%;
+  height: 100px;
+  background: seagreen;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

@@ -9,6 +9,9 @@ const readList = (req, res) => {
   })
 }
 
+// const getImage()
+
 module.exports = {
   readList
+  //   getImage
 }

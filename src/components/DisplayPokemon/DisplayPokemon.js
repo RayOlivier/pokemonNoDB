@@ -1,5 +1,8 @@
 import React, { Component } from "react"
 import axios from "axios"
+import PokeCard from "./PokeCard/PokeCard"
+import "./DisplayPokemon.css"
+import SearchBar from "./SearchBar/SearchBar"
 
 class DisplayPokemon extends Component {
   constructor() {
@@ -20,11 +23,24 @@ class DisplayPokemon extends Component {
   render() {
     console.log(this.state.pokeList)
 
-    let newList = this.state.pokeList.map((e, i, arr) => {
-      return <div key={i}>{e.name}</div>
+    this.state.pokeList.sort((a, b) => {
+      return a.national_id - b.national_id
     })
-    return <div>{newList}</div>
+    let newList = this.state.pokeList.map((e, i, arr) => {
+      return (
+        <PokeCard key={i} name={e.name} id={e.national_id} type={e.types} />
+      )
+    })
+
+    return (
+      <div className="leftMain">
+        <SearchBar />
+        <div className="displayList">{newList}</div>
+      </div>
+    )
   }
 }
+
+//TYPES IS AN ARRAY OF OBJECTS
 
 export default DisplayPokemon

@@ -3,6 +3,7 @@ import "./App.css"
 import Header from "./components/Header"
 import axios from "axios"
 import DisplayPokemon from "./components/DisplayPokemon/DisplayPokemon"
+import SideBar from "./components/SideBar/SideBar"
 
 class App extends Component {
   constructor() {
@@ -21,14 +22,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <link
+          rel="stylesheet"
+          href="https://meyerweb.com/eric/tools/css/reset/reset.css"
+        />
         <Header />
-        <div>
-          {/* {this.state.pokemonList[3]} */}
-          Test
-        </div>
-        <DisplayPokemon />
-        {/* <SideBar /> */}
+        <main>
+          <DisplayPokemon />
+          <SideBar />
+        </main>
       </div>
     )
   }
