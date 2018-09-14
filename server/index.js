@@ -5,4 +5,6 @@ const express = require("express"),
 
 app.use(bodyParser.json())
 
+const BASE_URL = "https://pokeapi.co"
+
 app.listen(port, () => console.log(`Listening on ${port}`))
