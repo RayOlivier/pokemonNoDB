@@ -20,7 +20,9 @@ class DetailedCard extends Component {
               src={`https://img.pokemondb.net/artwork/${this.props.name}.jpg`}
               alt=""
             />
-            <button>Add to Team</button>
+            <button onClick={() => this.props.handleAdd(this.props.id)}>
+              Add to Team
+            </button>
           </div>
         ) : (
           <div className="not-clicked">

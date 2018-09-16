@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import "./MyTeam.css"
+import memberCard from "./memberCard/memberCard"
 
 class MyTeam extends Component {
   render() {

@@ -5,25 +5,28 @@ import MyTeam from "./MyTeam/MyTeam"
 import DetailedCard from "./DetailedCard/DetailedCard"
 
 class SideBar extends Component {
-  // componentWillReceiveProps() {
-  //   axios.get(`/api/pokemon/${this.props.id}`).then(res => {
-  //     console.log(res.data)
-  //     this.setState({ pokeInfo: res.data })
-  //   })
-  // }
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      pokeTeam: []
+    }
+
+    this.handleAdd = this.handleAdd.bind(this)
+  }
+  handleAdd(id) {
+    console.log(id)
+    axios.post(`/api/team`, { id: id })
+  }
+
   render() {
-    // let newPokemon = (
-    //   <DetailedCard name={this.state.pokeInfo.name} id={this.props.id} />
-    // )
-
-    // console.log(`SIDEBAR POKEINFO: ${JSON.stringify(this.state.pokeInfo)}`)
-
     return (
       <div className="sidebar">
         <DetailedCard
           id={this.props.id}
           name={this.props.pokeInfo.name}
           clicked={this.props.clicked}
+          handleAdd={this.handleAdd}
         />
         <MyTeam />
       </div>

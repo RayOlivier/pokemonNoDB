@@ -2,19 +2,19 @@ const express = require("express"),
   bodyParser = require("body-parser"),
   app = express(),
   port = 3001,
-  myTeamCtrl = require("./controllers/myTeamCtrl"),
+  pokemonCtrl = require("./controllers/pokemonCtrl"),
   axios = require("axios")
-pokemonListCtrl = require("./controllers/pokemonListCtrl")
+// pokemonCtrl = require("./controllers/pokemonCtrl")
 
 app.use(bodyParser.json())
 
-app.get("/api/list", pokemonListCtrl.readList)
+app.get("/api/list", pokemonCtrl.readList)
 
-app.get("/api/pokemon/:id", myTeamCtrl.readPokemon)
-app.get("/api/team", myTeamCtrl.readTeam)
-app.post("/api/team/:national_id", myTeamCtrl.addMember)
-app.delete("/api/team/:teamId")
-app.put("/api/team/:teamId")
+app.get("/api/pokemon/:id", pokemonCtrl.readPokemon)
+app.get("/api/team", pokemonCtrl.readTeam)
+app.post("/api/team", pokemonCtrl.addMember)
+app.delete("/api/team/:teamIndex", pokemonCtrl.deleteMember)
+app.put("/api/team/:teamIndex", pokemonCtrl.updateTeam)
 
 // app.get("/api/list", pokemonListCtrl.readList)
 
