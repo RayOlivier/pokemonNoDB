@@ -40,7 +40,7 @@ module.exports = {
         return obj.national_id === req.body.id
       })
     )
-    console.log(myTeam)
+    console.log(myTeam.length)
     res.status(200)
   },
 

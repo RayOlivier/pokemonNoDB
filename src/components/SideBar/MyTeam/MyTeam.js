@@ -1,10 +1,14 @@
 import React, { Component } from "react"
 import "./MyTeam.css"
-import memberCard from "./memberCard/memberCard"
+import MemberCard from "./MemberCard/MemberCard"
 
 class MyTeam extends Component {
   render() {
-    return <div className="whole-team">My Team</div>
+    let teamArr = this.props.team.map((e, i, arr) => {
+      return <MemberCard member={e} key={i} number={i + 1} />
+    })
+
+    return <div className="whole-team">{teamArr}</div>
   }
 }
 

@@ -35,9 +35,9 @@ class App extends Component {
   }
 
   render() {
-    console.log(
-      `APP POKEINFO AFTER CLICK: ${JSON.stringify(this.state.pokeInfo)}`
-    )
+    // console.log(
+    //   `APP POKEINFO AFTER CLICK: ${JSON.stringify(this.state.pokeInfo)}`
+    // )
     return (
       <div className="app">
         <link

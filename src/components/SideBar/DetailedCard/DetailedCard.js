@@ -8,7 +8,7 @@ class DetailedCard extends Component {
   // }
 
   render() {
-    console.log(this.props.clicked)
+    // console.log(this.props.clicked)
     return (
       <div className="either-card">
         {this.props.clicked ? (

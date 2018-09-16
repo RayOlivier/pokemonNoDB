@@ -5,4 +5,9 @@
   box-sizing: border-box;
   padding: 10px;
   text-align: center;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }

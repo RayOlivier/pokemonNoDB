@@ -9,7 +9,8 @@ class SideBar extends Component {
     super(props)
 
     this.state = {
-      pokeTeam: []
+      pokeTeam: [],
+      updateStupidComponent: 0
     }
 
     this.handleAdd = this.handleAdd.bind(this)
@@ -17,9 +18,32 @@ class SideBar extends Component {
   handleAdd(id) {
     console.log(id)
     axios.post(`/api/team`, { id: id })
+    // this.setState({ updateStupidComponent: this.state.updateStupidComponent++ })
+    axios.get("/api/team").then(res => {
+      console.log(res.data)
+      this.setState({ pokeTeam: res.data })
+    })
+    // .then(res => {
+    //   axios.get("/api/team").then(response => {
+    //     console.log(response)
+    //   })
+    // }))
+
+    //
+
+    //   axios.get("/api/team").then(response => {
+    //     console.log(response.data)
+    //     this.setState({ pokeTeam: response.data })
+    //     console.log(`sidebar pokeTeam: ${this.state.pokeTeam}`)
+    //   })
+    // })
+    // console.log(this.state.pokeTeam)
   }
 
   render() {
+    // console.log(this.state.pokeTeam)
+
+    console.log(this.state.pokeTeam)
     return (
       <div className="sidebar">
         <DetailedCard
@@ -28,7 +52,7 @@ class SideBar extends Component {
           clicked={this.props.clicked}
           handleAdd={this.handleAdd}
         />
-        <MyTeam />
+        <MyTeam team={this.state.pokeTeam} />
       </div>
     )
   }
