@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+.either-card {
+  width: 100%;
+  height: 40%;
+}
+
+.whole-card {
+  box-sizing: border-box;
+  padding: 10px;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  /* border: dotted 2 px purple; */
+  background: white;
+  text-align: center;
+}
+
+#artwork {
+  /* display: block; */
+  height: 50%;
+  width: 50%;
+}
+
+.not-clicked {
+  font-size: 32px;
+  padding: 20px;
+  text-align: center;
+}

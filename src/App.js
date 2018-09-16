@@ -10,8 +10,13 @@ class App extends Component {
     super()
 
     this.state = {
-      pokemonList: []
+      pokemonList: [],
+      cardId: null,
+      pokeInfo: [],
+      clicked: false
     }
+
+    this.handlePokeCardClick = this.handlePokeCardClick.bind(this)
   }
 
   // componentDidMount() {
@@ -20,7 +25,19 @@ class App extends Component {
   //   })
   // }
 
+  handlePokeCardClick(id) {
+    // this.setState({ cardId: id })
+    // console.log("APP ID after click: " + this.state.cardId)
+    axios.get(`/api/pokemon/${id}`).then(res => {
+      // console.log(res.data)
+      this.setState({ pokeInfo: res.data, cardId: id, clicked: true })
+    })
+  }
+
   render() {
+    console.log(
+      `APP POKEINFO AFTER CLICK: ${JSON.stringify(this.state.pokeInfo)}`
+    )
     return (
       <div className="app">
         <link
@@ -29,8 +46,12 @@ class App extends Component {
         />
         <Header />
         <main>
-          <DisplayPokemon />
-          <SideBar />
+          <DisplayPokemon handlePokeCardClick={this.handlePokeCardClick} />
+          <SideBar
+            id={this.state.cardId}
+            pokeInfo={this.state.pokeInfo}
+            clicked={this.state.clicked}
+          />
         </main>
       </div>
     )

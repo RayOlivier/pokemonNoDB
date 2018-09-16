@@ -10,6 +10,7 @@ app.use(bodyParser.json())
 
 app.get("/api/list", pokemonListCtrl.readList)
 
+app.get("/api/pokemon/:id", myTeamCtrl.readPokemon)
 app.get("/api/team", myTeamCtrl.readTeam)
 app.post("/api/team/:national_id", myTeamCtrl.addMember)
 app.delete("/api/team/:teamId")

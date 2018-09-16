@@ -1,5 +1,9 @@
 .sidebar {
-  width: 30vw;
-  height: 85vh;
-  border: solid 2px blue;
+  width: 30%;
+  height: 100%;
+  border: solid 3px black;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background: gray;
 }
