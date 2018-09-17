@@ -31,18 +31,30 @@ module.exports = {
     return res.status(200).json(myTeam)
   },
 
-  updateTeam(req, res) {},
-
   addMember(req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     myTeam.push(
       pokemonList.find(obj => {
         return obj.national_id === req.body.id
       })
     )
-    console.log(myTeam.length)
+    // console.log(myTeam.length)
     res.status(200)
   },
 
-  deleteMember(req, res) {}
+  updateTeam(req, res) {
+    console.log(req.params)
+    let mover = myTeam.splice(req.params.teamIndex, 1)
+    console.log(myTeam.length)
+    myTeam.unshift(mover[0])
+    console.log(myTeam[0].name)
+    res.status(200)
+  },
+
+  deleteMember(req, res) {
+    // console.log(req.params)
+    myTeam.splice(req.params.teamIndex, 1)
+    // console.log(myTeam)
+    res.status(200)
+  }
 }

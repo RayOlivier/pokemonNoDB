@@ -3,3 +3,11 @@
   width: 45%;
   height: 30%;
 }
+.member-image {
+  height: 50%;
+  width: auto;
+}
+
+.member-button {
+  font-size: 8px;
+}

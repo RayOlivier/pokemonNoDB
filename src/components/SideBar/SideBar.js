@@ -9,18 +9,36 @@ class SideBar extends Component {
     super(props)
 
     this.state = {
-      pokeTeam: [],
-      updateStupidComponent: 0
+      pokeTeam: []
     }
 
     this.handleAdd = this.handleAdd.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
+    this.handleMove = this.handleMove.bind(this)
   }
-  handleAdd(id) {
-    console.log(id)
-    axios.post(`/api/team`, { id: id })
-    // this.setState({ updateStupidComponent: this.state.updateStupidComponent++ })
+
+  handleDelete(memberIndex) {
+    console.log(memberIndex)
+    axios.delete(`/api/team/${memberIndex}`)
     axios.get("/api/team").then(res => {
-      console.log(res.data)
+      // console.log(res.data)
+      this.setState({ pokeTeam: res.data })
+    })
+  }
+  handleMove(memberIndex) {
+    console.log(memberIndex)
+    axios.put(`/api/team/${memberIndex}`)
+    axios.get("/api/team").then(res => {
+      // console.log(res.data)
+      this.setState({ pokeTeam: res.data })
+    })
+  }
+
+  handleAdd(id) {
+    // console.log(id)
+    axios.post(`/api/team`, { id: id })
+    axios.get("/api/team").then(res => {
+      // console.log(res.data)
       this.setState({ pokeTeam: res.data })
     })
     // .then(res => {
@@ -52,7 +70,11 @@ class SideBar extends Component {
           clicked={this.props.clicked}
           handleAdd={this.handleAdd}
         />
-        <MyTeam team={this.state.pokeTeam} />
+        <MyTeam
+          team={this.state.pokeTeam}
+          handleDelete={this.handleDelete}
+          handleMove={this.handleMove}
+        />
       </div>
     )
   }
