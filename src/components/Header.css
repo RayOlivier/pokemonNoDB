@@ -1,14 +1,36 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 
-.header {
-  height: 15vh;
-  width: 100%;
-  background: pink;
-  font-family: "Roboto", sans-serif;
+.ball-img {
+  height: auto;
+  width: 500px;
+  position: relative;
+  right: -80px;
+  top: 200px;
+}
+
+#header {
+  height: 140px;
+  width: 70%;
+  /* background: lightblue; */
+  background-image: url("../field.png");
+  font-family: "Press Start 2P", sans-serif;
   font-size: 72px;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /* flex-direction: column; */
   /* justify-content: end; */
   align-items: flex-end;
+  /* padding: 20px; */
+  border-bottom: solid black 3px;
+  overflow: hidden;
+}
+
+.header-text {
+  padding-left: 10px;
+  /* padding-bottom: 2px; */
+  /* overflow: ; */
 }

@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+.poke-name {
+  /* text-decoration: underline; */
+  /* border-spacing: 10px; */
+  padding: 2px;
+  border-bottom: white 2px solid;
+  font-size: 22px;
+}
+.stats {
+  font-size: 20px;
+}
+
 .either-card {
   width: 100%;
   height: 40%;
@@ -16,20 +27,64 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 
   /* border: dotted 2 px purple; */
-  background: white;
+  background: rgb(54, 54, 54);
   text-align: center;
+
+  font-size: 20px;
+  color: whitesmoke;
 }
+/* .img-contain {
+  box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
+} */
 
 #artwork {
   /* display: block; */
   height: 50%;
-  width: 50%;
+  width: auto;
+  border-radius: 40px;
+}
+
+.add-div {
+  /* background: purple; */
+  height: 30px;
+  width: 150px;
+  font-size: 20px;
+  background: skyblue;
+  border: black 2px solid;
+  border-radius: 8px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-div:hover {
+  cursor: pointer;
+  /* box-shadow: 2px 4px 3px 0px grey; */
+  background: lightblue;
+  /* border: solid 3px grey; */
 }
 
 .not-clicked {
+  height: 100%;
+  background: #333;
   font-size: 32px;
-  padding: 20px;
+  padding: 20% 20%;
   text-align: center;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.detailed-pokeball {
+  height: 70px;
+  width: 50px;
+  margin: 20px;
+  transform: rotate(20deg);
+  /* border: 2px black solid; */
 }

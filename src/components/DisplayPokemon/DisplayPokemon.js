@@ -40,7 +40,7 @@ class DisplayPokemon extends Component {
 
     return (
       <div className="leftMain">
-        <SearchBar />
+        {/* <SearchBar /> */}
         <div className="displayList">{newList}</div>
       </div>
     )

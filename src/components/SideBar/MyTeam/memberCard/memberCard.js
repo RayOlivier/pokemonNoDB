@@ -1,7 +1,7 @@
 import React from "react"
 import "./MemberCard.css"
 
-export default function memberCard(props) {
+export default function MemberCard(props) {
   return (
     <div className="whole-member-card">
       Member #{props.number}
@@ -11,22 +11,24 @@ export default function memberCard(props) {
         alt={props.number}
       />
       <h1>{props.member.name}</h1>
-      <button
-        className="member-button"
-        onClick={() => {
-          props.handleMove(props.memberIndex)
-        }}
-      >
-        Make 1st
-      </button>
-      <button
-        className="member-button"
-        onClick={() => {
-          props.handleDelete(props.memberIndex)
-        }}
-      >
-        Delete
-      </button>
+      <div className="button-container">
+        <button
+          className="member-button"
+          onClick={() => {
+            props.handleMove(props.memberIndex)
+          }}
+        >
+          Make 1st
+        </button>
+        <button
+          className="member-button"
+          onClick={() => {
+            props.handleDelete(props.memberIndex)
+          }}
+        >
+          Delete
+        </button>
+      </div>
     </div>
   )
 }

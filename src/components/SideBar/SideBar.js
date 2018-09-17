@@ -61,7 +61,7 @@ class SideBar extends Component {
   render() {
     // console.log(this.state.pokeTeam)
 
-    console.log(this.state.pokeTeam)
+    // console.log(this.props.pokeInfo.types)
     return (
       <div className="sidebar">
         <DetailedCard
@@ -69,6 +69,8 @@ class SideBar extends Component {
           name={this.props.pokeInfo.name}
           clicked={this.props.clicked}
           handleAdd={this.handleAdd}
+          arr={this.props.pokeInfo}
+          // types={this.props.pokeInfo.types}
         />
         <MyTeam
           team={this.state.pokeTeam}

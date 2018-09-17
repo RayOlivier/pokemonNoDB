@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:600");
 
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .app {
   /* display: flex; */
   background: lightblue;
+  background-image: url("./grass2.png");
+  /* position: relative; */
 }
 
 main {

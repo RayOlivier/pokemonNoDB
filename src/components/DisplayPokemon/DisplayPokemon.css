@@ -4,6 +4,10 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+  font-size: 18px;
+  /* border-right: solid black 2px; */
 }
 
 .leftMain {

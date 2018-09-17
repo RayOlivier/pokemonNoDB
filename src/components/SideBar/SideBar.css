@@ -1,9 +1,10 @@
 .sidebar {
   width: 30%;
   height: 100%;
-  border: solid 3px black;
+  /* border: solid 3px black; */
   position: fixed;
   bottom: 0px;
   right: 0px;
   background: gray;
+  border-left: solid black 2px;
 }

@@ -33,11 +33,14 @@ module.exports = {
 
   addMember(req, res) {
     // console.log(req.body)
+    // if (myTeam.length <= 6) {
     myTeam.push(
       pokemonList.find(obj => {
         return obj.national_id === req.body.id
       })
     )
+    // }
+
     // console.log(myTeam.length)
     res.status(200)
   },
@@ -45,7 +48,7 @@ module.exports = {
   updateTeam(req, res) {
     console.log(req.params)
     let mover = myTeam.splice(req.params.teamIndex, 1)
-    console.log(myTeam.length)
+    // console.log(myTeam.length)
     myTeam.unshift(mover[0])
     console.log(myTeam[0].name)
     res.status(200)
