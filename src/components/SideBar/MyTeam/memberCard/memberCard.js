@@ -4,7 +4,7 @@ import "./MemberCard.css"
 export default function MemberCard(props) {
   return (
     <div className="whole-member-card">
-      Member #{props.number}
+      {/* Member #{props.number} */}
       <img
         className="member-image"
         src={`https://img.pokemondb.net/sprites/x-y/normal/${props.member.name.toLowerCase()}.png`}

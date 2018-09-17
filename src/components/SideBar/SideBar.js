@@ -18,7 +18,7 @@ class SideBar extends Component {
   }
 
   handleDelete(memberIndex) {
-    console.log(memberIndex)
+    // console.log(memberIndex)
     axios.delete(`/api/team/${memberIndex}`)
     axios.get("/api/team").then(res => {
       // console.log(res.data)
@@ -26,7 +26,7 @@ class SideBar extends Component {
     })
   }
   handleMove(memberIndex) {
-    console.log(memberIndex)
+    // console.log(memberIndex)
     axios.put(`/api/team/${memberIndex}`)
     axios.get("/api/team").then(res => {
       // console.log(res.data)

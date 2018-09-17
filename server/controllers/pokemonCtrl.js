@@ -8,8 +8,8 @@ let id = 0
 // app.use(bodyParser.json())
 
 const readList = (req, res) => {
-  axios.get("http://pokeapi.co/api/v1/pokemon/?limit=151").then(response => {
-    console.log(response.data.objects[3])
+  axios.get("http://pokeapi.co/api/v1/pokemon/?limit=140").then(response => {
+    // console.log(response.data.objects[3])
     pokemonList = response.data.objects
     res.status(200).json(pokemonList)
   })
@@ -33,24 +33,24 @@ module.exports = {
 
   addMember(req, res) {
     // console.log(req.body)
-    // if (myTeam.length <= 6) {
-    myTeam.push(
-      pokemonList.find(obj => {
-        return obj.national_id === req.body.id
-      })
-    )
-    // }
+    if (myTeam.length < 6) {
+      myTeam.push(
+        pokemonList.find(obj => {
+          return obj.national_id === req.body.id
+        })
+      )
+    }
 
     // console.log(myTeam.length)
     res.status(200)
   },
 
   updateTeam(req, res) {
-    console.log(req.params)
+    // console.log(req.params)
     let mover = myTeam.splice(req.params.teamIndex, 1)
     // console.log(myTeam.length)
     myTeam.unshift(mover[0])
-    console.log(myTeam[0].name)
+    // console.log(myTeam[0].name)
     res.status(200)
   },
 

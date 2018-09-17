@@ -7,7 +7,7 @@
   width: 500px;
   position: relative;
   right: -80px;
-  top: 200px;
+  bottom: -200px;
 }
 
 #header {

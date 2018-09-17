@@ -49,7 +49,7 @@ class DetailedCard extends Component {
           </div>
         ) : (
           <div className="not-clicked">
-            <h1>Click a Pokémon...</h1>
+            <h1>Choose your Pokémon</h1>
             <div className="detailed-pokeball">
               <Pokeball />
             </div>
